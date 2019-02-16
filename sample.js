@@ -60,16 +60,16 @@ $(document).ready(function(){
        for(let i=0;i<number;i++){
            if (sum[i]<60){
                judge = "不合格";
+               return judge;
            }
-          return judge;
        }
     
     // ここに、全ての教科が60点以上なら"合格"の文字列、一つでも60点未満の教科があったら"不合格"の文字列を出す処理を書き込む
   }
 
   function judgement(){
-    let achievement = get_achievement()
-    let judge = get_pass_or_failure()
+    let achievement = get_achievement();
+    let judge = get_pass_or_failure();
     // ここに、「最終ジャッジ」のボタンを押したら「あなたの成績はAです。合格です」といった内容を出力する処理を書き込む
     // 下記の記述をすることで、「最終ジャッジ」のボタンを押すと「あなたの成績は（ここに「ランク」の値を入れる）です。（ここに「判定」の値を入れる）です」という文字の入った水色のフキダシが出力される処理が実装される。
     $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は${achievement}です。${judge}です</label>`);
